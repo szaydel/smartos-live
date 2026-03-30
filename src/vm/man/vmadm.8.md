@@ -2126,6 +2126,21 @@ tab-complete UUIDs rather than having to type them out for every command.
         update: yes
         default: 'std'
 
+    virtio1:
+
+	Enables or disables the presentation of virtio 1.0 devices in the
+	transitional driver to a bhyve guest. Some guests have drivers that
+	do not support the transitional (both 0.9 and 1.0) interface for 0.9
+	devices due to guest driver bugs, so if this property is missing from
+	an existing VM object it will be false. Newly created VMs will set
+	this to true, unless the creation payload specifies it to be false.
+
+	type: boolean
+	vmtype: bhyve
+	listable: yes
+	create: yes
+	update: yes
+
     virtio_txburst:
 
         This controls how many packets can be sent on a single flush of the tx
